@@ -1,0 +1,7 @@
+{
+  "name": "BlogApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
