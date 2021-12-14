@@ -1,7 +1,7 @@
-import { Redirect, Route } from 'react-router-dom';
+import {Redirect, Route} from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -21,20 +21,25 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import {Provider} from "react-redux";
+import {store} from "./context/redux/store";
+import PostsPage from "./pages/PostsPage";
+import PostDetailPage from "./pages/PostDetailPage";
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+    <Provider store={store}>
+      <IonApp>
+        <IonReactRouter>
+          <IonRouterOutlet>
+            <Route exact path="/posts" component={PostsPage} />
+            <Route exact path="/">
+              <Redirect to="/posts" />
+            </Route>
+            <Route path="/posts/:id" component={PostDetailPage} />
+          </IonRouterOutlet>
+        </IonReactRouter>
+      </IonApp>
+    </Provider>
 );
 
 export default App;

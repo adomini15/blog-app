@@ -1,0 +1,11 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "BlogApp",
+	"webDir": "build",
+	"bundledWebRuntime": false,
+	"server": {
+		"allowNavigation": [
+			"https://joangregorioperez.com"
+		]
+	}
+}

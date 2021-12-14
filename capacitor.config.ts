@@ -4,7 +4,13 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'BlogApp',
   webDir: 'build',
-  bundledWebRuntime: false
+  bundledWebRuntime: false,
+  // aggregate for me
+  server: {
+    allowNavigation: [
+      "https://joangregorioperez.com"
+    ]
+  }
 };
 
 export default config;
